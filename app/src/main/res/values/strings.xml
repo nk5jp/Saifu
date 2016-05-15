@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Saifu</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_receipt">ReceiptActivity</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="str_month">month</string>
+    <string name="str_year">year</string>
+    <string name="str_total">total</string>
+    <string name="str_create">CREATE</string>
+    <string name="str_read">READ</string>
+    <string name="str_update">UPDATE</string>
+    <string name="str_delete">DELETE</string>
+    <string name="str_tax">TAX</string>
+    <string name="title_activity_budget">BudgetActivity</string>
+    <string name="str_clear">CLEAR</string>
+    <string name="str_name">name</string>
+    <string name="str_amount">amount</string>
+    <string name="str_isValid">isValid</string>
+    <string name="str_back">BACK</string>
+    <string name="str_from">from</string>
+    <string name="str_to">to</string>
+    <string name="str_add">ADD</string>
+</resources>
