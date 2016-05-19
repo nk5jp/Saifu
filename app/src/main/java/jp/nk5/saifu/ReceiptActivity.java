@@ -84,6 +84,9 @@ public class ReceiptActivity extends AppCompatActivity implements UpdateViewList
         Spinner spinner = (Spinner) findViewById(R.id.spinner2);
         Budget budget = (Budget) spinner.getSelectedItem();
         int amount = getIntFromView(R.id.editText3, 0);
+        if (amount == 0 || budget == null) {
+            return;
+        }
         controller.addDetail(budget, amount);
     }
 
@@ -94,12 +97,18 @@ public class ReceiptActivity extends AppCompatActivity implements UpdateViewList
     public void onClickCreateDeleteButton(View view) {
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         Asset asset = (Asset) spinner.getSelectedItem();
+        if (asset == null || form.getReceipt().getDetails().size() == 0) {
+            return;
+        }
         controller.createDeleteReceipt(asset);
         this.finish();
     }
 
     public void onClickTaxButton(View view) {
         if (!form.isCreateMode()) {
+            return;
+        }
+        if (form.getReceipt().getDetails().size() == 0) {
             return;
         }
         controller.calcTax();
