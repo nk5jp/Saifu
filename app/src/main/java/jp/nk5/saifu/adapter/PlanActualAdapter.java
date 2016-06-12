@@ -1,6 +1,7 @@
 package jp.nk5.saifu.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,11 @@ public class PlanActualAdapter extends ArrayAdapter<PlanActualDTO> {
             imageView.setImageResource(R.drawable.icon_valid);
         } else {
             imageView.setImageResource(R.drawable.icon_invalid);
+        }
+        if (dto.getActualAmount() > dto.getBudget().getAmount()) {
+            textView.setTextColor(Color.RED);
+        } else {
+            textView.setTextColor(Color.BLACK);
         }
         return view;
     }
