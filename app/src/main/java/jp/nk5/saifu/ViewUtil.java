@@ -16,9 +16,9 @@ public class ViewUtil {
     }
 
     private static String padding(int money) {
-        if (money > 100) {
+        if (money >= 100) {
             return Integer.toString(money);
-        } else if (money > 10) {
+        } else if (money >= 10) {
             return "0" + money;
         } else {
             return "00" + money;
