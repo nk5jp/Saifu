@@ -98,7 +98,7 @@ public class MainActivity extends Activity implements UpdateViewListener {
         PlanActualAdapter adapter = new PlanActualAdapter(this, R.layout.list_textwithicon, form.getDTOs());
         ListView listView = (ListView)this.findViewById(R.id.listView);
         listView.setAdapter(adapter);
-        ((TextView) findViewById(R.id.textView)).setText(getString(R.string.str_total) + ": " + ViewUtil.getMoneyString(form.getTotal()));
+        ((TextView) findViewById(R.id.textView)).setText(getString(R.string.str_total) + ": " + ViewUtil.getMoneyString(form.getActualTotal()) + " / " + ViewUtil.getMoneyString(form.getPlanTotal()));
     }
 
     public void showError(String error) {
@@ -137,7 +137,7 @@ public class MainActivity extends Activity implements UpdateViewListener {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH) + 1;
-            form = new MainForm(year, month, 0, null);
+            form = new MainForm(year, month, 0, 0, null);
             assetRepository = new AssetRepositoryImpl(this);
             budgetRepository = new BudgetRepositoryImpl(this);
             receiptRepository = new ReceiptRepositoryImpl(this, assetRepository, budgetRepository, year, month);

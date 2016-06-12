@@ -12,7 +12,7 @@ import jp.nk5.saifu.domain.ReceiptRepository;
 import jp.nk5.saifu.form.PlanActualDTO;
 
 /**
- * 予算画面のアプリケーション層．メイン画面を包括する内容であるため，そちらを継承する．
+ * 予算画面のアプリケーション層．
  * Created by NK5JP on 2016/05/08.
  */
 public class BudgetApplication {
@@ -39,10 +39,18 @@ public class BudgetApplication {
         return dtos;
     }
 
-    public int calcTotal(List<PlanActualDTO> DTOs) {
+    public int calcActualTotal(List<PlanActualDTO> DTOs) {
         int total = 0;
         for (PlanActualDTO dto : DTOs) {
             total = total + dto.getActualAmount();
+        }
+        return total;
+    }
+
+    public int calcPlanTotal(List<PlanActualDTO> DTOs) {
+        int total = 0;
+        for (PlanActualDTO dto : DTOs) {
+            total = total + dto.getBudget().getAmount();
         }
         return total;
     }

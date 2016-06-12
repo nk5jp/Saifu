@@ -17,7 +17,9 @@ public class MainForm {
     @Getter @Setter
     private int month;
     @Getter @Setter
-    private int total;
+    private int ActualTotal;
+    @Getter @Setter
+    private int PlanTotal;
     @Getter @Setter
     private List<PlanActualDTO> DTOs;
  }

@@ -72,8 +72,10 @@ public class AppTest {
         receiptRepository.updateReceipt(receipt1);
         receiptRepository.updateReceipt(receipt2);
         List<PlanActualDTO> DTOs = application.createPlanActualList(2016, 5);
-        int total = application.calcTotal(DTOs);
-        assertEquals(5000, total);
+        int actualTotal = application.calcActualTotal(DTOs);
+        int planTotal = application.calcPlanTotal(DTOs);
+        assertEquals(5000, actualTotal);
+        assertEquals(30000, planTotal);
         assertEquals(2, DTOs.size());
         assertEquals(2000, DTOs.get(0).getActualAmount());
         assertEquals(10000, DTOs.get(0).getBudget().getAmount());

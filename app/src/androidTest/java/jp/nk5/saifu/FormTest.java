@@ -48,14 +48,16 @@ public class FormTest {
     @Test
     public void MainFormTest() throws Exception {
         Budget budget1 = new Budget(-1, "testBudget1", 2016, 4, 10000, true);
-        MainForm mainForm = new MainForm(2016, 4, 0, new ArrayList<PlanActualDTO>());
+        MainForm mainForm = new MainForm(2016, 4, 0, 0, new ArrayList<PlanActualDTO>());
         mainForm.getDTOs().add(new PlanActualDTO(budget1, 125));
         mainForm.setYear(2017);
         mainForm.setMonth(5);
-        mainForm.setTotal(1000);
+        mainForm.setActualTotal(1000);
+        mainForm.setPlanTotal(1200);
         assertEquals(2017, mainForm.getYear());
         assertEquals(5, mainForm.getMonth());
-        assertEquals(1000, mainForm.getTotal());
+        assertEquals(1000, mainForm.getActualTotal());
+        assertEquals(1200, mainForm.getPlanTotal());
         assertEquals(budget1, mainForm.getDTOs().get(0).getBudget());
     }
 

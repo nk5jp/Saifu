@@ -29,7 +29,8 @@ public class MainController {
     public void updatePlanActualList(int year, int month) {
         try {
             form.setDTOs(application.createPlanActualList(year, month));
-            form.setTotal(application.calcTotal(form.getDTOs()));
+            form.setActualTotal(application.calcActualTotal(form.getDTOs()));
+            form.setPlanTotal(application.calcPlanTotal(form.getDTOs()));
             form.setYear(year);
             form.setMonth(month);
             updateUI();
